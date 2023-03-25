@@ -1,6 +1,8 @@
 class GitCommand {
     constructor(working_directory){
         this.working_directory = working_directory;
+        this.staging = [];
+        this.local_repository = [];
     }
     //Command: git init 
     init(){
@@ -14,6 +16,18 @@ class GitCommand {
         /*
             Create logic here and run unit testing.
         */
+        if(Object.keys(this.working_directory.new_changes).length){
+            let numberOfChanges = Object.keys(this.working_directory.new_changes).length
+            let files = "";
+            
+            for(let key in this.working_directory.new_changes){
+               files += "\n" + key;
+               
+            }
+            return `You have ${numberOfChanges} change/s.${files}`;
+        } else {
+            return "You have 0 change/s.\n";
+        }
     }
 
     //Command: git add <filename/file directory/wildcard> 

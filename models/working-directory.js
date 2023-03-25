@@ -12,7 +12,7 @@ class WorkingDirectory{
         this.files[path_file] = { 
             "name": name,
             "location": location,
-            "content": content
+            "content": content,
         };
         this.new_changes = this.files;
     }
