@@ -1,9 +1,9 @@
-name: Build on push to develop
+name: Build on push to any branch.
 
 on:
   push:
     branches:
-      - develop
+      - '*'
 
 jobs:
   build:
