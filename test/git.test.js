@@ -33,4 +33,13 @@ describe("Testing GitCommand.status()", function(){
         
         expect(output).to.equal('Nothing to push. No committed file found.');
     })
+
+    it('failing test case', ()=>{
+        let wd = new WorkingDirectory();
+        let git = new GitCommand(wd);
+
+        let output = git.push();
+        
+        expect(output).to.equal('fail.');
+    })
 })
